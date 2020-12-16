@@ -19,3 +19,19 @@
 
 (define (kupkok x)
   (cbrt-iter 1.0 x))
+
+
+
+__ computing iterative factorial __
+(define (factorial n)
+  (fact-iter 1 1 n))
+(define (fact-iter product counter max-count)
+  (if (> counter max-count)
+      product
+      (fact-iter (* product counter) (+ 1 counter) max-count)))
+      
+__ computing recursive factorial __
+(define (factorial n)
+  (cond ((= n 1) 1)
+        ((= n 0) 1)
+        (else (* n (factorial (- n 1))))))
