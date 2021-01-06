@@ -88,3 +88,12 @@ __iterative__
         ((< row 0) 0)
         ((= column 1) 1)
         (else (+ (pascal (- row 1) (- column 1)) (pascal (- row 1) column)))))
+        
+*Exercise 1.21:*
+(define (smallest-divisor n counter)
+  (cond ((= counter n) counter)
+      ((= (remainder n counter) 0) counter)
+      (else (smallest-divisor n (+ 1 counter)))))
+(define (square x) (* x x))
+(define (ekok n) (smallest-divisor n 2))
+  
