@@ -1,7 +1,7 @@
 # sicp-
 
 __*EXERCISE 1.1.8*__
-
+``` lisp
 (define (cbrt-iter guess x)
 (if (good-enough? guess x)
        guess
@@ -19,9 +19,9 @@ __*EXERCISE 1.1.8*__
 
 (define (kupkok x)
   (cbrt-iter 1.0 x))
+```
 
-
-
+``` lisp
 __computing iterative factorial__
 (define (factorial n)
   (fact-iter 1 1 n))
@@ -35,6 +35,8 @@ __computing recursive factorial__
   (cond ((= n 1) 1)
         ((= n 0) 1)
         (else (* n (factorial (- n 1))))))
+```
+``` lisp
 __some iterations of recursive count-change function *not completed*__
 (define (count-change amount) (cc amount 5))
 (define (cc amount kinds-of-coins)
@@ -68,9 +70,9 @@ kinds-of-coins)))))
        (cc 75 4)
     
     (cc 50 5)
-    
-    
-    
+ ```
+   
+   ```lisp
 *Exercise 1.11:* 
 __recursive__
 
@@ -80,6 +82,8 @@ __recursive__
       (+ (f (- n 1)) (* (f (- n 2)) 2) (* (f (- n 3)) 3))))
 __iterative__
 --?
+```
+``` lisp
 *Exercise 1.12:*
 (define (pascal row column)
   (cond ((= row column) 1)
@@ -89,6 +93,9 @@ __iterative__
         ((= column 1) 1)
         (else (+ (pascal (- row 1) (- column 1)) (pascal (- row 1) column)))))
         
+  ```
+  
+  ``` lisp
 *Exercise 1.21:*
 (define (smallest-divisor n counter)
   (cond ((= counter n) counter)
@@ -96,8 +103,8 @@ __iterative__
       (else (smallest-divisor n (+ 1 counter)))))
 (define (square x) (* x x))
 (define (ekok n) (smallest-divisor n 2))
-  
- 
+  ```
+ ``` lisp
  *Exercise 1.23:*
  (define (runtime)
   (current-milliseconds))
@@ -148,3 +155,4 @@ __iterative__
           (try next))))
   (try first-guess))
 ;(fixed-point (lambda (x) (+ 1 (/ 1 x))) 1)
+```
